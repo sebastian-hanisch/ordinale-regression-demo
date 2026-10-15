@@ -1,7 +1,6 @@
 # Aus Beispielen lernen: UTA und robuste ordinale Regression – Streamlit-Demo
 
-<!-- Nach dem Deploy hierher den Live-Link setzen (Leerzeile davor und danach):
-**[→ Demo live ausprobieren](https://sebastianhanisch-ordinale-regression-demo.streamlit.app/)** -->
+**[→ Demo live ausprobieren](https://sebastianhanisch-ordinale-regression-demo.streamlit.app/)**
 
 Zwölftes Stück der Linie **Mehrkriterien-Ranking** in der „Konzepte“-Reihe für die Website „Sebastian Hanisch – Operations Research und Machine Learning“, Kind von
 [Gewichte erheben](https://github.com/sebastian-hanisch/gewichte-erheben-demo) und Kontrast zu [SMAA](https://github.com/sebastian-hanisch/smaa-demo). Der simulierte Entscheider ordnet
@@ -134,4 +133,4 @@ Gebaut mit Streamlit, Plotly, NumPy, SciPy, pandas und fpdf2.
 
 ---
 
-Diese Demo ist Teil des Portfolios von [Sebastian Hanisch](https://sebastianhanisch.net) – Operations Research und Machine Learning ([Über mich](https://sebastianhanisch.net/ueber-mich.html)). Mehr zu den Demos: [Interaktive Demos](https://sebastianhanisch.net/demos.html).
+Diese Demo ist Teil des Portfolios von [Sebastian Hanisch](https://sebastianhanisch.net) – Operations Research und Machine Learning ([Über mich](https://sebastianhanisch.net/ueber-mich.html)). Mehr zur Reihe: [Mehrkriterien-Ranking: von Pareto zum Vergleich](https://sebastianhanisch.net/konzepte-mehrkriterien-ranking.html).
