@@ -258,7 +258,7 @@ st.markdown(
 | **Das Modell ist additiv und stückweise linear** | Ein nicht additiver Entscheider (Untergrenze) erzeugt falsche „notwendige“ Paare oder eine unverträgliche Ordnung (Experiment 2). | Kriterien-Wechselwirkung |
 | **Die Urteile sind widerspruchsfrei** | Mit Rauschen ist die Ordnung oft nicht verträglich, und entschiedene Paare sind falsch (Experiment 2). | Gruppen-Entscheidung |
 | **Flexibilität kostet Entscheidbarkeit** | Mehr Abschnitte je Randfunktion lassen mehr Funktionen zu, also weniger notwendige Paare (Experiment 1). | – |
-| **Die Referenzen sind zufällig gewählt** | Informative Referenzen (an den Rändern) würden schneller entscheiden; die Demo misst den Durchschnitt. | – |
+| **Die Referenzen sind zufällig gewählt** | Ob eine gezielte Auswahl schneller entscheidet, misst die Demo nicht; sie misst den Durchschnitt zufälliger Referenzen. | – |
 | **Keine Intensitäten (GRIP), keine Gleichstände** | Urteile der Art „um wie viel besser“ und gleich gute Referenzen sind nicht Teil. | – |
 | **Der Entscheider ist ein Orakel** | Kein Mensch, der zögert oder seine Meinung ändert. | – |
 """

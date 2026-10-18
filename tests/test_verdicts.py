@@ -29,7 +29,7 @@ def test_verdict_model_picks_the_matched_the_non_additive_and_the_noisy_rows():
     assert kind == "warning"
     assert "sind 100,0 % der entschiedenen Paare richtig (Ordnung verträglich in 100,0 % der Matrizen)" in text
     assert "Entscheider (Untergrenze) sind 5,7 % der „notwendigen“ Paare falsch" in text
-    assert "nur in 68,8 % der Matrizen verträglich, und 6,1 % der entschiedenen Paare sind falsch" in text
+    assert "nur in 68,8 % der Matrizen verträglich, und 6,1 % der entschiedenen Paare (unter den verträglichen Matrizen) sind falsch" in text
 
 
 def test_verdict_arbitrary_names_open_pairs_and_both_solutions():

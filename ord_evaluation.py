@@ -297,7 +297,7 @@ def verdict_model(rows: list[dict]) -> tuple[str, str]:
     noisy = _row(rows, kind="noise", sigma=0.2, gamma=1)
     text = (f"Passen Modell und Urteile, sind {pct(ok['correct'])} % der entschiedenen Paare richtig (Ordnung verträglich in {pct(ok['compatible'])} % der Matrizen). Beim nicht additiven "
             f"Entscheider (Untergrenze) sind {pct(1 - nl['correct'])} % der „notwendigen“ Paare falsch. Bei Urteilen mit 20 % Rauschen ist die Ordnung der Referenzen nur in "
-            f"{pct(noisy['compatible'])} % der Matrizen verträglich, und {pct(1 - noisy['correct'])} % der entschiedenen Paare sind falsch: „notwendig“ gilt nur unter Voraussetzungen.")
+            f"{pct(noisy['compatible'])} % der Matrizen verträglich, und {pct(1 - noisy['correct'])} % der entschiedenen Paare (unter den verträglichen Matrizen) sind falsch: „notwendig“ gilt nur unter Voraussetzungen.")
     return "warning", text
 
 
@@ -317,5 +317,5 @@ def verdict_sampling(rows: list[dict]) -> tuple[str, str]:
     a, b = _row(rows, r=lo), _row(rows, r=hi)
     text = (f"Von {de(a['draws'], 0)} gleichverteilten Gewichtsziehungen erfüllen bei {lo} Referenzen {pct(a['share'])} % die Ordnung, bei {hi} nur {pct(b['share'])} % "
             f"(im Mittel {de(b['accepted'], 0)} Ziehungen). Der LP findet {de(b['possible_lp'], 2)} mögliche Beste je Matrix, die Stichprobe {de(b['found'], 2)}; bei {lo} sind es "
-            f"{de(a['possible_lp'], 2)} gegen {de(a['found'], 2)}. Die Ziehung wird mit jedem Urteil teurer, der LP nicht.")
+            f"{de(a['possible_lp'], 2)} gegen {de(a['found'], 2)}. Mit jedem Urteil trifft die Ziehung seltener, der LP braucht je Alternative weiter eine Rechnung.")
     return "info", text

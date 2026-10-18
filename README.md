@@ -17,16 +17,16 @@ Wie viele Beispielurteile, bis aus möglich notwendig wird, und wann ist „notw
 
 ## Befunde und Korrekturen gegenüber dem Plan
 
-- **Notwendig ist in der Modellklasse immer richtig, aber teuer.** Bei einem Entscheider mit Rohwerten sind 100,0 % der entschiedenen Paare richtig; bei 3 geordneten Referenzen von 12
-  Alternativen sind 13,2 % der übrigen Paare entschieden, bei 9 sind es 54,2 %. Mit stückweise linearen Randfunktionen (3 Abschnitte): 6,2 % und 14,6 %.
+- **Bei widerspruchsfreien Urteilen ist notwendig in der Modellklasse richtig, aber teuer.** Bei einem Entscheider mit Rohwerten sind 100,0 % der entschiedenen Paare richtig; bei 3 geordneten Referenzen von 12
+  Alternativen sind 13,2 % der übrigen Paare entschieden, bei 9 sind es 54,2 % (aus nur 16 Matrizen; in 200 Matrizen rund 65 %). Mit stückweise linearen Randfunktionen (3 Abschnitte): 6,2 % und 14,6 %.
 - **Das Modell muss passen.** Beim nicht additiven Entscheider (Untergrenze) sind bei nur-Gewichten 5,7 % der „notwendigen“ Paare falsch (0,38 je Matrix); mit 3 Abschnitten verschwindet
   das, aber nur 8,6 % der Paare sind dann entschieden.
-- **Die Urteile müssen widerspruchsfrei sein.** Mit 10 % Rauschen ist die Ordnung nur in 93,8 % der Matrizen verträglich und 4,4 % der entschiedenen Paare sind falsch; mit 20 % in
+- **Die Urteile müssen widerspruchsfrei sein.** Mit 10 % Rauschen ist die Ordnung nur in 93,8 % der Matrizen verträglich und 4,4 % der entschiedenen Paare (unter den verträglichen Matrizen) sind falsch; mit 20 % in
   68,8 % und 6,1 %.
 - **Eine einzelne Lösung ist eine Wahl:** Bei 6 Referenzen bleiben 63,8 % der Paare offen. Dort ordnet die Lösung mit größtem Abstand 78,5 % richtig, eine zufällige verträgliche Ecke
   67,9 %, und zwei Ecken ordnen 40,8 % dieser Paare verschieden.
 - **Ohne Urteile ist nur die Dominanz notwendig** (Pareto): ein Zusammenhang mit der Wurzel der Linie, den der Test `test_no_reference_and_one_reference_give_no_judgment` festhält.
-- **Gesampelt gegen ausgelotet:** Von 100 000 Gewichtsziehungen erfüllen bei 3 Referenzen 36,8 % die Ordnung, bei 8 nur 1,5 %; der LP kostet je Alternative eine Rechnung.
+- **Gesampelt gegen ausgelotet:** Von 100 000 Gewichtsziehungen erfüllen bei 3 Referenzen im Mittel gut ein Drittel die Ordnung (36,8 % in den 24 Matrizen, die Streuung zwischen Matrizen ist groß), bei 8 nur rund 1,5 %; der LP kostet je Alternative eine Rechnung.
 - **Jedes Experiment startet auf eigenen Klick** (rund 20 Sekunden: zwei LPs je Paar).
 
 ## Modell
@@ -49,7 +49,7 @@ Formeln im 📐-Expander der App.
 
 ## Befunde (gemessen, keine Behauptungen)
 
-Alle Zahlen: `tests/test_claims.py`. 16 feste Matrizen je Experiment (24 beim Sampling), 12 Alternativen, 5 Kriterien. **Der Standardfehler eines Anteils ist 4 bis 9 Punkte;
+Alle Zahlen: `tests/test_claims.py`. 16 feste Matrizen je Experiment (24 beim Sampling), 12 Alternativen, 5 Kriterien. **Der Standardfehler eines Anteils ist 2 bis 9 Punkte;
 Unterschiede unter etwa 10 Punkten sind nicht belastbar und stehen nicht als Aussage; belastbar sind die Richtung der Verläufe und die Identitäten (100,0 %).**
 
 | Frage | Befund | Test |
@@ -65,7 +65,7 @@ Unterschiede unter etwa 10 Punkten sind nicht belastbar und stehen nicht als Aus
 - **Notwendig gilt nur unter Voraussetzungen.** Modellklasse (additiv, stückweise linear) und widerspruchsfreie Urteile; die Experimente zeigen falsche notwendige Paare (bis 5,7 %)
   und unverträgliche Ordnungen (bis 31 % der Matrizen).
 - **Flexibilität kostet.** Mit 3 Abschnitten sind bei 7 Referenzen 13,1 statt 51,2 % der Paare entschieden.
-- **Die Referenzen sind zufällig gewählt.** Informative Referenzen würden schneller entscheiden; die Demo misst den Durchschnitt.
+- **Die Referenzen sind zufällig gewählt.** Ob eine gezielte Auswahl schneller entscheidet, misst die Demo nicht; sie misst den Durchschnitt zufälliger Referenzen.
 - **Eine Lösung ist keine Antwort.** Die Lösung mit größtem Abstand ist eine von vielen verträglichen.
 - **Kein GRIP, keine Gleichstände, keine Intensitäten:** Urteile der Art „um wie viel besser“ sind nicht Teil; UTA und seine Weiterentwicklungen sind hier nicht im Original geprüft.
 - **Wenige Matrizen.** 16 je Experiment wegen der Rechenzeit (zwei LPs je Paar); Unterschiede unter etwa 10 Punkten sind Rauschen.
